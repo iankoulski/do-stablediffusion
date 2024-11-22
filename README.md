@@ -34,3 +34,10 @@ The project contains the following scripts:
 * `status.sh` - show container status - running, exited, etc.
 * `logs.sh` - tail container logs
 * `exec.sh [cmd]` - open a shell or execute a specified command in the running container
+
+# References
+* [do-framework](https://bit.ly/do-framework)
+* [stable-diffusion](https://github.com/CompVis/stable-diffusion)
+* [stable-diffusion OpenVino](https://github.com/bes-dev/stable_diffusion.openvino)
+* [stable-diffusion cpu only](https://github.com/darkhemic/stable-diffusion-cpuonly)
+

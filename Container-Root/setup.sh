@@ -29,7 +29,7 @@ ln -s /stable_diffusion.openvino /stable-diffusion
 # Customize shell
 echo "alias ll='ls -alh --color=auto'" >> /root/.bashrc
 echo "alias python=python3" >> /root/.bashrc
-echo "alias sd='python demo.py'" >> /root/.bashrc
+echo "alias sd='python /stable-diffusion/demo.py'" >> /root/.bashrc
 echo "cat /banner.txt" >> /root/.bashrc
 echo "cat /version.txt" >> /root/.bashrc
 echo "cd /stable-diffusion" >> /root/.bashrc
