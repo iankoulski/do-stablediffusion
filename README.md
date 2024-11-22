@@ -8,7 +8,7 @@ Source: [https://github.com/iankoulski/do-stablediffusion.git](https://github.co
 # Usage
 
 ```
-docker run --rm -it -v $(pwd):/wd iankoulski/do-stablediffusion bash -c "sd --device CPU --num-inference-steps 3 --output /wd/out.png --prompt 'cat riding a horse'" 
+docker run --rm -it -v $(pwd):/wd iankoulski/do-stablediffusion /bin/bash -c "python3 /stable-diffusion/demo.py --device CPU --num-inference-steps 6 --output /wd/out.png --prompt 'a cat riding a horse'"
 ```
 
 or interactive mode
