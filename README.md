@@ -1,6 +1,22 @@
 # do-stablediffusion
 Run StableDiffusion on CPU or GPU using the [do-framework](https://bit.ly/do-framework)
 
+Container: iankoulski/do-stablediffusion
+
+Source: [https://github.com/iankoulski/do-stablediffusion.git](https://github.com/iankoulski/do-stablediffusion.git)
+
+# Usage
+
+```
+docker run --rm -it -v $(pwd):/wd iankoulski/do-stablediffusion bash -c "sd --device CPU --num-inference-steps 3 --output /wd/out.png --prompt 'cat riding a horse'" 
+```
+
+or
+
+```
+docker run --rm -it -v $(pwd):/wd iankoulski/do-stablediffusion bash
+```
+
 # Container project description
 
 
