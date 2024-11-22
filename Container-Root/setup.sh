@@ -19,16 +19,23 @@ git clone https://github.com/bes-dev/stable_diffusion.openvino.git
 cd stable_diffusion.openvino
 
 pip install openvino-dev[onnx,pytorch]==2022.3.0
-sed -i 's/numpy==1.19.5/numpy=1.21.2/g' ./requirements.txt
+sed -i 's/numpy==1.19.5/numpy==1.21.2/g' ./requirements.txt
 pip install -r requirements.txt
 
 cd ..
 
+ln -s /stable_diffusion.openvino /stable-diffusion
+
 # Customize shell
 echo "alias ll='ls -alh --color=auto'" >> /root/.bashrc
 echo "alias python=python3" >> /root/.bashrc
+echo "alias sd='python demo.py'" >> /root/.bashrc
 echo "cat /banner.txt" >> /root/.bashrc
 echo "cat /version.txt" >> /root/.bashrc
-
-ln -s /stable_diffusion.openvino /stable-diffusion
+echo "cd /stable-diffusion" >> /root/.bashrc
+echo "echo ''" >> /root/.bashrc
+echo "echo 'sd - Stable Diffusion CLI'" >> /root/.bashrc
+echo "echo ''" >> /root/.bashrc
+echo "sd --help" >> /root/.bashrc
+echo "echo ''" >> /root/.bashrc
 
