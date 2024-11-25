@@ -1,4 +1,4 @@
-ARG BASE_IMAGE_PATH="alpine:latest"
+ARG BASE_IMAGE_PATH="rayproject/ray:2.9.0"
 
 FROM $BASE_IMAGE_PATH
 
