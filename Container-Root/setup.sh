@@ -6,15 +6,18 @@ if [ -d /etc/apt ]; then
         [ -f /etc/apt/apt.conf ] && cat /etc/apt/apt.conf
 fi
 
-apt-get update
-apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
-apt-get install -y python3-dev curl wget git g++ libgl1 libgl1-mesa-glx libglib2.0-0 vim
+#sudo apt-get install -y python3-dev curl wget git g++ libgl1 libgl1-mesa-glx libglib2.0-0 vim
+sudo apt-get install -y curl wget git g++ libgl1 libgl1-mesa-glx libglib2.0-0 vim
 
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 ./get-pip.py
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+#python3 ./get-pip.py
 
 git clone https://github.com/bes-dev/stable_diffusion.openvino.git
+git clone https://github.com/mvinci12/awsome-inference-ray.git
+pip install fastapi[standard]
 
 cd stable_diffusion.openvino
 
@@ -24,18 +27,19 @@ pip install -r requirements.txt
 
 cd ..
 
-ln -s /stable_diffusion.openvino /stable-diffusion
+sudo ln -s /home/ray/stable_diffusion.openvino /stable-diffusion
 
 # Customize shell
-echo "alias ll='ls -alh --color=auto'" >> /root/.bashrc
-echo "alias python=python3" >> /root/.bashrc
-echo "alias sd='python /stable-diffusion/demo.py'" >> /root/.bashrc
-echo "cat /banner.txt" >> /root/.bashrc
-echo "cat /version.txt" >> /root/.bashrc
-echo "cd /stable-diffusion" >> /root/.bashrc
-echo "echo ''" >> /root/.bashrc
-echo "echo 'sd - Stable Diffusion CLI'" >> /root/.bashrc
-echo "echo ''" >> /root/.bashrc
-echo "sd --help" >> /root/.bashrc
-echo "echo ''" >> /root/.bashrc
+export BASHRC=/home/ray/.bashrc
+echo "alias ll='ls -alh --color=auto'" >> $BASHRC
+echo "alias python=python3" >> $BASHRC
+echo "alias sd='python /stable-diffusion/demo.py'" >> $BASHRC
+echo "cat /banner.txt" >> $BASHRC
+echo "cat /version.txt" >> $BASHRC
+echo "cd /stable-diffusion" >> $BASHRC
+echo "echo ''" >> $BASHRC
+echo "echo 'sd - Stable Diffusion CLI'" >> $BASHRC
+echo "echo ''" >> $BASHRC
+echo "sd --help" >> $BASHRC
+echo "echo ''" >> $BASHRC
 
